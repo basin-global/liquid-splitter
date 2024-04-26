@@ -1,2 +1,2 @@
 # liquid-splitter
-send/split erc20 across 721 and/or 1155 contracts
+send/split ERC20 across any, and multiple, ERC721 and/or ERC1155 contracts
