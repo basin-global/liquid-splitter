@@ -15,3 +15,20 @@ The Liquid Splitter can pay one `NFTContract` or pay multiple `NFTContract` in a
 1) solict feedback from Will, Abram, Sweetman, and others
 2) Rewrite or Substitute LS1155.sol to be the `split`
 3) Changes to LiquidSplit.sol `distributeFunds` to define `accounts` as sum tokens of `NFTContract`. Possibly no change to `percentAllocations` or `updateAndDistributeERC20`, just the `accounts` calculation.
+
+# Updates
+
+## 4-26-24
+
+**from Splits team:**
+  - hooking up a mutable split to a 721 and making the 721 the controller would essentially turn any 721 contract into a liquid split, but the 721 would need a modifier
+  - what 721 contracts actually generate enough value to distribute that value
+  - 10k tokens is above Splits recipient threshold
+
+**TMO notes:**
+- of note: open zeppelin repos ERC721Holder.sol and ERC1155Holder.sol (Tokenbound 6551 uses them in v3)
+- Liquid Splitter could have two delivery options:
+  a) `accounts` - send to OwnerOf
+  b) `tokenboundAccounts` - sends to ERC6551Account
+- add to TODO: 1155 would need to calculate across all tokenId's
+- re Splits comments: we have set out to change 721 use case and value. where is the friction on the limit? gas? compute? SplitsMain?
